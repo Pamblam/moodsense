@@ -27,7 +27,7 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 		PDO::ATTR_EMULATE_PREPARES   => false,
 	];
 	$pdo = new PDO($dsn, $user, $pass, $options);
-
-	
+	$stmt = $pdo->prepare("insert into moods (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
+	$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], "", "", time()]);
 
 }
