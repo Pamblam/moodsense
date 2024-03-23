@@ -175,13 +175,12 @@
 }
 
 .cjs-calDay:hover{
-	background: #9FDDFF;
+	background: rgba(0,0,0,0);
 	cursor: pointer;
 }
 
 .cjs-active{
-	background: #7FD2FF;
-	border-color: #B8E6FF;
+	border-color: #000;
 }
 
 .cjs-dateLabel{

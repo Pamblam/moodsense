@@ -19,6 +19,19 @@
 		};
 	})
 
+	let colors = [
+		'0000ff',
+		'1700e8',
+		'3600c9',
+		'5200ad',
+		'73008c',
+		'94006b',
+		'ab0054',
+		'ca0035',
+		'dc0023',
+		'ff0000'
+	];
+
 	let cal_opts = {
 		abbrDay: true,
 		onEventClick(event){
@@ -28,8 +41,9 @@
 			document.querySelectorAll('.cjs-dayCol[data-date]').forEach(ele=>{
 				let date = ele.dataset.date;
 				let [m,d,y] = date.split("/");
-				date = `${y}-${`${m}`.padEnd(2,'0')}-${`${d}`.padEnd(2,'0')}`;
+				date = `${y}-${`${m}`.padStart(2,'0')}-${`${d}`.padStart(2,'0')}`;
 				if(DATA[date]){
+					let color = colors[Math.round(DATA[date].avg)-1];
 					console.log(date);
 				}
 			});
