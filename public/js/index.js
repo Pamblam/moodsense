@@ -24,9 +24,15 @@
 		onEventClick(event){
 			console.log('clicked', event);
 		},
-		events: events,
 		afterDraw(){
-				
+			document.querySelectorAll('.cjs-dayCol[data-date]').forEach(ele=>{
+				let date = ele.dataset.date;
+				let [m,d,y] = date.split("/");
+				date = `${y}-${`${m}`.padEnd(2,'0')}-${`${d}`.padEnd(2,'0')}`;
+				if(DATA[date]){
+					console.log(date);
+				}
+			});
 		}
 	};
 	let cal = new calendar(cal_ele, cal_opts);
