@@ -47,8 +47,13 @@ This application allows you to journal your thoughts and feelings to receive hel
 
 Type Help or Menu for help.
 Type Calendar to see a calendar record of your entries so far.
-Otherwise, feel free to message how your day is going!
-			</Message>
+Otherwise, feel free to message how your day is going!</Message>
+		</Response><?php
+	}else if(isCalendarRequest($_REQUEST["Body"])){
+		echo '<?xml version="1.0" encoding="UTF-8"?>';
+		?>
+		<Response>
+			<Message>Click here to view your calendar. https://45.55.44.140/?phone=<?php echo urlencode($_REQUEST['From']); ?></Message>
 		</Response><?php
 	}else{
 		$response = getRating($_REQUEST['Body']);

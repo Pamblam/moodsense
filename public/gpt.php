@@ -47,4 +47,15 @@ function isHelpRequest($input){
         "help",
         "menu"
     ];
+    return in_array($input, $matches);
+}
+
+function isCalendarRequest($input){
+    $input = strtolower($input);
+    $input = trim($input);
+    $input = preg_replace('/[^A-Za-z]/', '', $input);
+    $matches = [
+        "calendar"
+    ];
+    return in_array($input, $matches);
 }
