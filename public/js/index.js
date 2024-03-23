@@ -34,8 +34,16 @@
 
 	let cal_opts = {
 		abbrDay: true,
-		onDayClick(day){
-			console.log('clicked', day);
+		onDayClick(date){
+			let month = `${date.getMonth()+1}`.padStart(2,'0');
+			let day = `${date.getDate()}`.padStart(2,'0');
+			let d = `${date.getFullYear()}-${month}-${day}`;
+			console.log(d);
+			if(DATA[date]){
+				console.log(DATA[date]);
+			}else{
+				console.log(`nothing on ${d}`);
+			}
 		},
 		afterDraw(){
 			document.querySelectorAll('.cjs-dayCol[data-date]').forEach(ele=>{
