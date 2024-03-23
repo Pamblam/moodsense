@@ -15,8 +15,8 @@
 	];
 	$pdo = new PDO($dsn, $user, $pass, $options);
 
-	$stmt = $pdo->prepare("select * from entries where from_number = ? order by ts asc");
-	$stmt->execute([$phone]);
+	$stmt = $pdo->prepare("select * from entries where from_number like ? order by ts asc");
+	$stmt->execute(["%$phone"]);
 
 	$dates = [];
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){

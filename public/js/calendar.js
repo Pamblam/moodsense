@@ -55,6 +55,7 @@
 			this.onEventClick = opts.onEventClick || function(){};
 			this.onMonthChanged = opts.onMonthChanged || function(){};
 			this.beforeDraw = (opts.beforeDraw || function(){}).bind(this);
+			this.afterDraw = (opts.afterDraw || function(){}).bind(this);
 			this.events = [];
 			this.month = opts.hasOwnProperty('month') ? opts.month-1 : (new Date()).getMonth();
 			this.year = opts.hasOwnProperty('year') ? opts.year : (new Date()).getFullYear();
@@ -302,7 +303,7 @@
 				var week = makeEle("div", {class: "cjs-weekRow calweekid"+currentWeek});
 				// draw days before the 1st of the month
 				while(currentDate===1&&currentDay<firstDayofWeek){
-					week.insertAdjacentHTML('beforeend', "<div class='cjs-dayCol cjs-blankday cjs-bottom cjs-left'><div class='cjs-dayContent'><div class='cjs-dayTable'><div class='cjs-dayCell'></div></div></div></div>");
+					week.insertAdjacentHTML('beforeend', "<div data-date=\""+`${this.month + 1}/${currentDate}/${this.year}`+"\" class='cjs-dayCol cjs-blankday cjs-bottom cjs-left'><div class='cjs-dayContent'><div class='cjs-dayTable'><div class='cjs-dayCell'></div></div></div></div>");
 					currentDay++;
 				}
 				// Store the events
@@ -352,7 +353,7 @@
 						if(currentDay===6&&currentDate===lastDate) directionalClass += " cjs-bottom-right";
 					} 
 					// draw day
-					week.insertAdjacentHTML('beforeend', "<div class='cjs-dayCol cjs-bottom cjs-left"+directionalClass+" "+(isDisabled ? 'cjs-blankday' : '')+"'><div class='cjs-dayContent'><div class='cjs-dayTable'><div class='cjs-dayCell "+(isDisabled ? '' : 'cjs-calDay')+" cjs-dayCell"+currentDate+"' data-day='"+currentDate+"' data-events='"+(evtids.join(","))+"'><span class='cjs-dateLabel'>"+currentDate+"</span> </div></div></div></div>");
+					week.insertAdjacentHTML('beforeend', "<div data-date=\""+`${this.month + 1}/${currentDate}/${this.year}`+"\" class='cjs-dayCol cjs-bottom cjs-left"+directionalClass+" "+(isDisabled ? 'cjs-blankday' : '')+"'><div class='cjs-dayContent'><div class='cjs-dayTable'><div class='cjs-dayCell "+(isDisabled ? '' : 'cjs-calDay')+" cjs-dayCell"+currentDate+"' data-day='"+currentDate+"' data-events='"+(evtids.join(","))+"'><span class='cjs-dateLabel'>"+currentDate+"</span> </div></div></div></div>");
 					currentDate++;
 					currentDay++;
 				}
@@ -395,7 +396,14 @@
 			}
 			var wks = this.elem.getElementsByClassName("cjs-weekRow");
 			for(var i=wks.length; i--;) wks[i].insertAdjacentHTML('beforeend', "<div class='cjs-clearfix'></div>");
-			return this._setCalendarEvents()._positionEventGroups();
+
+			let res = this._setCalendarEvents()._positionEventGroups();
+
+			if(typeof this.afterDraw === 'function'){
+				await this.afterDraw();
+			}
+
+			return res;
 		}
 		
 		/**

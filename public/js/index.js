@@ -9,19 +9,25 @@
 	</div>`;
 
 	let cal_ele = document.getElementById('calendar');
+
+	let events = Object.keys(DATA).map(dte=>{
+		let date = new Date(DATA[dte].entries[0].ts*1000);
+		return {
+		  desc: `Average: `+DATA[dte].avg,
+		  date: date,
+		  entries: DATA[dte].entries
+		};
+	})
+
 	let cal_opts = {
 		abbrDay: true,
 		onEventClick(event){
 			console.log('clicked', event);
 		},
-		events: Object.keys(DATA).map(dte=>{
-			let date = new Date(DATA[dte].entries[0].ts*1000);
-			return {
-			  desc: `Average: `+DATA[dte].avg,
-			  date: date,
-			  entries: DATA[dte].entries
-			};
-		})
+		events: events,
+		afterDraw(){
+				
+		}
 	};
 	let cal = new calendar(cal_ele, cal_opts);
 
