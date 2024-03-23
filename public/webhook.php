@@ -11,6 +11,7 @@
 	'NumMedia' => '0',
 	'NumSegments' => '1',
  */
+require "gpt.php";
 
 if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 
@@ -27,7 +28,21 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 		PDO::ATTR_EMULATE_PREPARES   => false,
 	];
 	$pdo = new PDO($dsn, $user, $pass, $options);
+	
+	$response = getRating($_REQUEST['Body']);
+
+	$re = '/Rating:\s(\d+)[^:]*:\s(.*)/';
+	preg_match($re, $response, $gob);
+	$rating = $gob[1];
+
+	$gpt_response = $gob[2];
+
 	$stmt = $pdo->prepare("insert into moods (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
-	$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], "", "", time()]);
+	$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], $rating, $gpt_response, time()]);
+	echo '<?xml version="1.0" encoding="UTF-8"?>';
+	?>
+	<Response>
+		<Message><?php echo $gpt_response; ?></Message>
+	</Response><?php
 
 }

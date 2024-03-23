@@ -35,7 +35,7 @@ function promptUser($prompt){
 
 function getRating($entry){
 	$token = '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';
-	$context = "Given a journal entry, rate how upset the author might be on a scale of 1 to 10, 10 being the most sad.";
+	$context = "Given a journal entry, rate how upset the author might be on a scale of 1 to 10, 10 being the most upset. Also give advice to the author about how to deal with the emotions.";
 	return getGPTResponse($token, $context, $entry);
 }
 
