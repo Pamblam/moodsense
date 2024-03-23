@@ -22,7 +22,7 @@
 	while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 		$date = date('Y-m-d', $row['ts']);
 		if(empty($dates[$date])) $dates[$date] = ['entries'=>[], 'avg'=>$row['rating']];
-		$dates[$date]['entries'] = $row;
+		$dates[$date]['entries'][] = $row;
 		$dates[$date]['avg'] = ($dates[$date]['avg'] + $row['rating']) / 2;
 	}
 
