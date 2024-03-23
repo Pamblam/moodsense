@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 /**
  * Post Paramters:
 	'MessageSid' => '15f11ce2-f233-46ea-9283-54964411f1f2',
@@ -10,6 +13,8 @@
 	'Body' => 'Bop',
 	'NumMedia' => '0',
 	'NumSegments' => '1',
+
+	http://45.55.44.140/webhook.php?From=+18137035515&To=+12179616663&Body=i%20am%20having%20a%20nice%20day.%20everything%20is%20wonderful.%20i%20have%20to%20poop%20a%20little.
  */
 require "gpt.php";
 
