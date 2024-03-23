@@ -9,7 +9,7 @@
 			<img src='./img/logo.png' class='img-fluid' style='margin: 0 auto; max-width: 80%;' />
 		</div>
 		<div class='alert alert-info'>
-			<p>Click on any date in the calendar to view the average mood rating and journal logs.</p>
+			<p class="m-0">Click on any date in the calendar to view the average mood rating and journal logs.</p>
 		</div>
 		<div id='calendar'></div>
 		<div id='entries' class='mb-5'></div>
