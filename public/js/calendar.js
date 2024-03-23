@@ -303,7 +303,7 @@
 				var week = makeEle("div", {class: "cjs-weekRow calweekid"+currentWeek});
 				// draw days before the 1st of the month
 				while(currentDate===1&&currentDay<firstDayofWeek){
-					week.insertAdjacentHTML('beforeend', "<div data-date=\""+`${this.month + 1}/${currentDate}/${this.year}`+"\" class='cjs-dayCol cjs-blankday cjs-bottom cjs-left'><div class='cjs-dayContent'><div class='cjs-dayTable'><div class='cjs-dayCell'></div></div></div></div>");
+					week.insertAdjacentHTML('beforeend', "<div class='cjs-dayCol cjs-blankday cjs-bottom cjs-left'><div class='cjs-dayContent'><div class='cjs-dayTable'><div class='cjs-dayCell'></div></div></div></div>");
 					currentDay++;
 				}
 				// Store the events
