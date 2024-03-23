@@ -34,8 +34,8 @@
 
 	let cal_opts = {
 		abbrDay: true,
-		onEventClick(event){
-			console.log('clicked', event);
+		onDayClick(day){
+			console.log('clicked', day);
 		},
 		afterDraw(){
 			document.querySelectorAll('.cjs-dayCol[data-date]').forEach(ele=>{
@@ -45,6 +45,7 @@
 				if(DATA[date]){
 					let color = colors[Math.round(DATA[date].avg)-1];
 					ele.style.backgroundColor = `#${color}`;
+					ele.querySelector('.cjs-dateLabel').style.color = `#FFF`;
 				}
 			});
 		}
