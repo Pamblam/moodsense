@@ -3,12 +3,15 @@
 	console.log(DATA);
 	let container = document.querySelector('div');
 
-	container.innerHTML = `<div class='container'>
+	container.innerHTML = `
+	<img src='./img/logo.png' class='img-fluid' style='margin: 0 auto;' />
+	<div class='container'>
 		<div id='calendar'></div>
 		<div id='entries'></div>
 	</div>`;
 
 	let cal_ele = document.getElementById('calendar');
+	let entries_ele = document.getElementById('calendar');
 
 	let events = Object.keys(DATA).map(dte=>{
 		let date = new Date(DATA[dte].entries[0].ts*1000);
@@ -39,10 +42,22 @@
 			let day = `${date.getDate()}`.padStart(2,'0');
 			let d = `${date.getFullYear()}-${month}-${day}`;
 			console.log(d);
-			if(DATA[date]){
-				console.log(DATA[date]);
+			if(DATA[d]){
+				let mood_face = DATA[d].avg > 7 ? '😡' : (DATA[d].avg > 3 ? '😐' : '😄');
+				let mood_text = DATA[d].avg > 7 ? 'bad' : (DATA[d].avg > 3 ? 'neutral' : 'good');
+
+				entries_ele.innerHTML = `
+					<p class='text-center'><b>${DATA[d].entries.length} entr${DATA[d].entries.length===1?'y':'ies'} on ${d}</b></p>
+					<p class='text-center'><small>${mood_face} Your over-all mood was ${mood_text} on this day (${DATA[d].avg} out of 10).</small></p>
+					${DATA[d].entries.map(entry=>{
+						return `<div class='econtainer'>
+							<div class='entry-box'>${entry.entry}</div>
+							<div class='entry-box'>${entry.response}</div>
+						</div>`;
+					}).join('')}
+				`;
 			}else{
-				console.log(`nothing on ${d}`);
+				entries_ele.innerHTML = `<p><b>No entries on ${d}</b></p>`;
 			}
 		},
 		afterDraw(){
