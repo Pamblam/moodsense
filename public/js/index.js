@@ -89,12 +89,12 @@
 							let mood_face = emojis[scale];
 							let mood_text = mood_adjectives[scale];
 
-							return `<div class='econtainer'>
+							return `<div class='econtainer mb-3'>
 								<div><b>${time}</b> (Mood: ${mood_face} ${entry.rating}/10)</div>
-								<div class='entry-box'>${entry.entry}</div>
+								<div class='entry-box mb-3'>${entry.entry}</div>
 								<div class='entry-box text-muted'><small><i><b>Response:</b> ${entry.response}</i></small></div>
 							</div>`;
-						}).join('')}
+						}).join('<hr>')}
 					</div>
 				`;
 			}else{
