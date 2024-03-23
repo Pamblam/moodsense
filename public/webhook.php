@@ -39,6 +39,8 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 	
 	$response = getRating($_REQUEST['Body']);
 
+	echo $response; exit;
+
 	$re = '/Rating:\s(\d+)[^:]*:\s(.*)/';
 	preg_match($re, $response, $gob);
 	$rating = $gob[1];
