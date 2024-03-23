@@ -74,14 +74,15 @@
 			let month = `${date.getMonth()+1}`.padStart(2,'0');
 			let day = `${date.getDate()}`.padStart(2,'0');
 			let d = `${date.getFullYear()}-${month}-${day}`;
+
+			if(active_element) active_element.style.outline = null;
+			active_element = document.querySelector(`.cjs-dayCol[data-date="${+month}/${day}/${date.getFullYear()}"]`)
+			active_element.style.outline = `3px solid lightgreen`;
+
 			if(DATA[d]){
 				let scale = Math.round(DATA[d].avg)-1;
 				let mood_face = emojis[scale];
 				let mood_text = mood_adjectives[scale];
-
-				if(active_element) active_element.style.outline = null;
-				active_element = document.querySelector(`.cjs-dayCol[data-date="${+month}/${day}/${date.getFullYear()}"]`)
-				active_element.style.outline = `3px solid lightgreen`;
 
 				entries_ele.innerHTML = `<div class='m-3'>
 						<p class='text-center'><b>${DATA[d].entries.length} entr${DATA[d].entries.length===1?'y':'ies'} on ${d}</b></p>
