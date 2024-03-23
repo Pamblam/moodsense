@@ -42,7 +42,7 @@ function getRating($entry){
 function isHelpRequest($input){
     $input = strtolower($input);
     $input = trim($input);
-    $input = preg_replace('/[^A-Za-z]/', '', $response);
+    $input = preg_replace('/[^A-Za-z]/', '', $input);
     $matches = [
         "help",
         "menu"
