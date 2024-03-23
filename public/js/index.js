@@ -11,7 +11,7 @@
 	</div>`;
 
 	let cal_ele = document.getElementById('calendar');
-	let entries_ele = document.getElementById('calendar');
+	let entries_ele = document.getElementById('entries');
 
 	let events = Object.keys(DATA).map(dte=>{
 		let date = new Date(DATA[dte].entries[0].ts*1000);
