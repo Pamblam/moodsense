@@ -80,7 +80,7 @@
 				let mood_text = mood_adjectives[scale];
 
 				if(active_element) active_element.style.outline = null;
-				active_element = document.querySelectorAll(`.cjs-dayCol[data-date="${+month}/${day}/${date.getFullYear()}"]`)
+				active_element = document.querySelector(`.cjs-dayCol[data-date="${+month}/${day}/${date.getFullYear()}"]`)
 				active_element.style.outline = `3px solid lightgreen`;
 
 				entries_ele.innerHTML = `<div class='m-3'>
