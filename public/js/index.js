@@ -9,7 +9,8 @@
 			<img src='./img/logo.png' class='img-fluid' style='margin: 0 auto; max-width: 80%;' />
 		</div>
 		<div id='calendar'></div>
-		<div id='entries'></div>
+		<div id='entries' class='mb-5'></div>
+		<div class='text-center text-muted mb-3'>By Pam Mishaw &amp; Rob Parham &centerdot; TadHacks 2024<small></small></div>
 	</div>`;
 
 	let cal_ele = document.getElementById('calendar');
@@ -90,7 +91,7 @@
 							let mood_text = mood_adjectives[scale];
 
 							return `<div class='econtainer mb-3'>
-								<div><b>${time}</b> (Mood: ${mood_face} ${entry.rating}/10)</div>
+								<div class='mb-3'><b>${time}</b> (Mood: ${mood_face} ${entry.rating}/10)</div>
 								<div class='entry-box mb-3'>${entry.entry}</div>
 								<div class='entry-box text-muted'><small><i><b>Response:</b> ${entry.response}</i></small></div>
 							</div>`;
