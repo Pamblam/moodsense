@@ -4,8 +4,8 @@
 	let container = document.querySelector('div');
 
 	container.innerHTML = `
-	<img src='./img/logo.png' class='img-fluid' style='margin: 0 auto; max-width: 80%;' />
 	<div class='container'>
+		<img src='./img/logo.png' class='img-fluid' style='margin: 0 auto; max-width: 80%;' />
 		<div id='calendar'></div>
 		<div id='entries'></div>
 	</div>`;
