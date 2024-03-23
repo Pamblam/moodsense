@@ -17,9 +17,9 @@
 		events: Object.keys(DATA).map(dte=>{
 			let date = new Date(DATA[dte].entries[0].ts*1000);
 			return {
-			  desc: DATA[dte].avg,
+			  desc: `Average: `+DATA[dte].avg,
 			  date: date,
-			  entries: DATA[dte].etries
+			  entries: DATA[dte].entries
 			};
 		})
 	};
