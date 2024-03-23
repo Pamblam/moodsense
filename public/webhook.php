@@ -3,6 +3,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+phpinfo();
+exit;
+
 /**
  * Post Paramters:
 	'MessageSid' => '15f11ce2-f233-46ea-9283-54964411f1f2',
