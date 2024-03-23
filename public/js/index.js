@@ -8,6 +8,9 @@
 		<div class='text-center m-5'>
 			<img src='./img/logo.png' class='img-fluid' style='margin: 0 auto; max-width: 80%;' />
 		</div>
+		<div class='alert alert-info'>
+			<p>Click on any date in the calendar to view the average mood rating and journal logs.</p>
+		<div>
 		<div id='calendar'></div>
 		<div id='entries' class='mb-5'></div>
 		<div class='text-center text-muted mb-3'>By Pam Mishaw &amp; Rob Parham &centerdot; TadHacks 2024<small></small></div>
@@ -99,7 +102,7 @@
 					</div>
 				`;
 			}else{
-				entries_ele.innerHTML = `<p><b>No entries on ${d}</b></p>`;
+				entries_ele.innerHTML = `<p class='text-center my-3'><b>No entries on ${d}</b></p>`;
 			}
 		},
 		afterDraw(){
