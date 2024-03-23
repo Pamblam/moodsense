@@ -44,7 +44,7 @@
 				date = `${y}-${`${m}`.padStart(2,'0')}-${`${d}`.padStart(2,'0')}`;
 				if(DATA[date]){
 					let color = colors[Math.round(DATA[date].avg)-1];
-					console.log(date);
+					ele.style.backgroundColor = `#${color}`;
 				}
 			});
 		}

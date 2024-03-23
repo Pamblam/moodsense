@@ -21,28 +21,28 @@
 
 .cjs-calHeader{
 	width:100%;
-	color: #2C7EAA;
+	color: #000;
 	margin:0;
 	padding:0 0 2px 0 !important;
 }
 
 .cjs-right{
-	border-right: 1px solid #7FD2FF;
+	border-right: 1px solid #000;
 	box-sizing: border-box;
 }
 
 .cjs-top{
-	border-top: 1px solid #7FD2FF;
+	border-top: 1px solid #000;
 	box-sizing: border-box;
 }
 
 .cjs-left{
-	border-left: 1px solid #7FD2FF;
+	border-left: 1px solid #000;
 	box-sizing: border-box;
 }
 
 .cjs-bottom{
-	border-bottom: 1px solid #7FD2FF;
+	border-bottom: 1px solid #000;
 	box-sizing: border-box;
 }
 
@@ -80,12 +80,12 @@
     background-repeat:no-repeat;
     background-size:cover; 
 	overflow:hidden;
-	background-color: #B8E6FF;
+	background-color: rgba(0,0,0,0);
 	text-align: left;
 }
 
 .cjs-dayContent{
-	color: #2C7EAA;
+	color: #000;
 	position:absolute;
     height: calc(100% - 5px); /* 90%; /* = 100% - 2*5% padding */
     width: calc(100% - 5px); /*90%; /* = 100% - 2*5% padding */
@@ -97,8 +97,8 @@
 	padding: 0;
 	margin:0;
 	font-size:0.8em;
-	background-color: #B8E6FF;
-	color: #2C7EAA;
+	background-color: rgba(0,0,0,0);
+	color: #000;
 	text-align: center;
 }
 
@@ -123,18 +123,18 @@
 }
 
 .cjs-blankday{
-	background-color: #9FDDFF;
+	background-color: rgba(0,0,0,0);
 }
 
 .cjs-lastLink{
 	float:left;
 	font-size:0.8em;
 	margin:0;
-	background: #9FDDFF;
+	background: rgba(0,0,0,0);
 	border-radius: 3px;
 	padding: 1px 5px;
-	color: #2C7EAA;
-	border: 1px solid #7FD2FF;
+	color: #000;
+	border: 1px solid #000;
 	box-sizing: border-box;
 	font-weight:600;
 }
@@ -143,11 +143,11 @@
 	float:right;
 	font-size:0.8em;
 	margin:0;
-	background: #9FDDFF;
+	background: rgba(0,0,0,0);
 	border-radius: 3px;
 	padding: 1px 5px;
-	color: #2C7EAA;
-	border: 1px solid #7FD2FF;
+	color: #000;
+	border: 1px solid #000;
 	box-sizing: border-box;
 	font-weight:600;
 }
@@ -171,7 +171,7 @@
 
 .cjs-lastLink:hover, .cjs-nextLink:hover{
 	cursor: pointer;
-	color: #212121;
+	color: #000;
 }
 
 .cjs-calDay:hover{
@@ -194,10 +194,10 @@
 	padding:0;
 	float: right;
 	font-size:0.7em;
-	background: #7FD2FF;
+	background: rgba(0,0,0,0);
 	border-radius: 99px;
 	padding: 1px 2px;
-	color: #212121;
+	color: #000;
 }
 
 .cjs-calEvent{
@@ -206,10 +206,10 @@
 	left:0px;
 	width:10px;
 	font-size:0.7em;
-	background: rgba(0, 153, 153, .4);
+	background: rgba(0,0,0,0);
 	border-radius: 3px;
 	padding: 1px 2px;
-	color: #212121;
+	color: #000;
 	text-align:center;
 	margin:initial;
 	cursor: pointer;
