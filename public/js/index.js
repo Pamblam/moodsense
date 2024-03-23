@@ -5,7 +5,7 @@
 
 	container.innerHTML = `
 	<div class='container'>
-		<div class='text-center'>
+		<div class='text-center m-5'>
 			<img src='./img/logo.png' class='img-fluid' style='margin: 0 auto; max-width: 80%;' />
 		</div>
 		<div id='calendar'></div>
@@ -71,7 +71,7 @@
 			let d = `${date.getFullYear()}-${month}-${day}`;
 			console.log(d);
 			if(DATA[d]){
-				let scale = Math.round(DATA[date].avg)-1;
+				let scale = Math.round(DATA[d].avg)-1;
 				let mood_face = emojis[scale];
 				let mood_text = mood_adjectives[scale];
 
