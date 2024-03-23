@@ -45,7 +45,7 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 
 	$gpt_response = $gob[2];
 
-	$stmt = $pdo->prepare("insert into moods (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
+	$stmt = $pdo->prepare("insert into entries (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
 	$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], $rating, $gpt_response, time()]);
 	echo '<?xml version="1.0" encoding="UTF-8"?>';
 	?>
