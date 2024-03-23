@@ -77,7 +77,7 @@
 			let d = `${date.getFullYear()}-${month}-${day}`;
 
 			if(active_element) active_element.style.outline = null;
-			active_element = document.querySelector(`.cjs-dayCol[data-date="${+month}/${day}/${date.getFullYear()}"]`)
+			active_element = document.querySelector(`.cjs-dayCol[data-date="${+month}/${+day}/${date.getFullYear()}"]`)
 			active_element.style.outline = `3px solid lightgreen`;
 
 			if(DATA[d]){
