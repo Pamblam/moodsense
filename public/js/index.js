@@ -71,13 +71,10 @@
 	let cal_opts = {
 		abbrDay: true,
 		onDayClick(date){
-			console.log(date);
 
 			let month = `${date.getMonth()+1}`.padStart(2,'0');
 			let day = `${date.getDate()}`.padStart(2,'0');
 			let d = `${date.getFullYear()}-${month}-${day}`;
-
-			console.log(`.cjs-dayCol[data-date="${+month}/${day}/${date.getFullYear()}"]`);
 
 			if(active_element) active_element.style.outline = null;
 			active_element = document.querySelector(`.cjs-dayCol[data-date="${+month}/${day}/${date.getFullYear()}"]`)
