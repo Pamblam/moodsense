@@ -10,7 +10,7 @@
 		</div>
 		<div class='alert alert-info'>
 			<p>Click on any date in the calendar to view the average mood rating and journal logs.</p>
-		<div>
+		</div>
 		<div id='calendar'></div>
 		<div id='entries' class='mb-5'></div>
 		<div class='text-center text-muted mb-3'>By Pam Mishaw &amp; Rob Parham &centerdot; TadHacks 2024<small></small></div>
