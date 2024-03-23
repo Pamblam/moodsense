@@ -34,8 +34,7 @@ $response = curl_exec($ch);
 
 curl_close($ch);
 
-
-
+print($response);
 
 // $client = new Client(PROJECT_ID, API_TOKEN, [
 // 	"signalwireSpaceUrl" => SW_SPACE_URL
