@@ -37,20 +37,36 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 	];
 	$pdo = new PDO($dsn, $user, $pass, $options);
 	
-	$response = getRating($_REQUEST['Body']);
+	if(isHelpRequest($_REQUEST["Body"])){
+		echo '<?xml version="1.0" encoding="UTF-8"?>';
+		?>
+		<Response>
+			<Message>Welcome to MoodSense!
 
-	$re = '/(\d+)[^:]*:\s?(.*)/';
-	preg_match($re, $response, $gob);
-	$rating = $gob[1];
+This application allows you to journal your thoughts and feelings to receive helpful feedback as well as provide a tracker for your mood in a calendar form!
 
-	$gpt_response = $gob[2];
+Type Help or Menu for help.
+Type Calendar to see a calendar record of your entries so far.
+Otherwise, feel free to message how your day is going!
+			</Message>
+		</Response><?php
+	}else{
+		$response = getRating($_REQUEST['Body']);
 
-	$stmt = $pdo->prepare("insert into entries (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
-	$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], $rating, $gpt_response, time()]);
-	echo '<?xml version="1.0" encoding="UTF-8"?>';
-	?>
-	<Response>
-		<Message><?php echo $gpt_response; ?></Message>
-	</Response><?php
+		$re = '/(\d+)[^:]*:\s?(.*)/';
+		preg_match($re, $response, $gob);
+		$rating = $gob[1];
+
+		$gpt_response = $gob[2];
+
+		$stmt = $pdo->prepare("insert into entries (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
+		$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], $rating, $gpt_response, time()]);
+		echo '<?xml version="1.0" encoding="UTF-8"?>';
+		?>
+		<Response>
+			<Message><?php echo $gpt_response; ?></Message>
+		</Response><?php
+
+	}
 
 }

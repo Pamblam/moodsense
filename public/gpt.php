@@ -39,4 +39,12 @@ function getRating($entry){
 	return getGPTResponse($token, $context, $entry);
 }
 
-
+function isHelpRequest($input){
+    $input = strtolower($input);
+    $input = trim($input);
+    $input = preg_replace('/[^A-Za-z]/', '', $response);
+    $matches = [
+        "help",
+        "menu"
+    ];
+}
