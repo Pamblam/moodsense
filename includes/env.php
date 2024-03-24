@@ -22,7 +22,7 @@ Click here to view your calendar. {{CAL_LINK}}
 END);
 
 // Create Database connection
-$dsn = "mysql:host=".DB_HOST.";dbname=".DB_SCHEMA.";charset=$charset";
+$dsn = "mysql:host=".DB_HOST.";dbname=".DB_SCHEMA.";charset=utf8mb4";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
