@@ -10,7 +10,7 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 		echo '<Response><Message>' . MSG_INTRO . '</Message></Response>';
 
 	}else if(isCalendarRequest($_REQUEST["Body"])){
-		$url = "https://45.55.44.140/?phone=" . urlencode($_REQUEST['From']);
+		$url = "https://moodsense.dev/?phone=" . urlencode($_REQUEST['From']);
 		echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 		echo '<Response><Message>' . str_replace('{{CAL_LINK}}', $url, MSG_CALENDAR) . '</Message></Response>';
 
@@ -18,7 +18,7 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 		$response = getRating($_REQUEST['Body'], GPT_TOKEN);
 		$re = '/(\d+)[^:]*:\s?(.*)/';
 		preg_match($re, $response, $gob);
-		$rating = $gob[1];
+		$rating = intval($gob[1]);
 		$gpt_response = $gob[2];
 		$stmt = $pdo->prepare("insert into entries (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
 		$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], $rating, $gpt_response, time()]);

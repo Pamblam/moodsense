@@ -21,6 +21,8 @@ define('MSG_CALENDAR', <<<END
 Click here to view your calendar. {{CAL_LINK}}
 END);
 
+date_default_timezone_set('America/New_York');
+
 // Create Database connection
 $dsn = "mysql:host=".DB_HOST.";dbname=".DB_SCHEMA.";charset=utf8mb4";
 $options = [
