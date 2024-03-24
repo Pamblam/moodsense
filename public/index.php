@@ -1,19 +1,7 @@
 <?php
+	require "../includes/env.php";
+
 	$phone = $_GET['phone'];
-
-	$host = 'localhost';
-	$db   = 'moods';
-	$user = 'root';
-	$pass = 'bayhacks';
-	$charset = 'utf8mb4';
-
-	$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-	$options = [
-		PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-		PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-		PDO::ATTR_EMULATE_PREPARES   => false,
-	];
-	$pdo = new PDO($dsn, $user, $pass, $options);
 
 	$stmt = $pdo->prepare("select * from entries where from_number like ? order by ts asc");
 	$stmt->execute(["%$phone"]);
