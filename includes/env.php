@@ -5,7 +5,7 @@ define('DB_HOST', 'localhost');
 define('DB_SCHEMA', 'moods');
 define('DB_USER', 'root');
 define('DB_PASS', 'bayhacks');
-define('GPT_TOKEN', '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');
+define('GPT_TOKEN', file_get_contents('/var/www/openai.key'));
 
 define('MSG_INTRO', <<<END
 Welcome to MoodSense!

@@ -10,7 +10,7 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 		echo '<Response><Message>' . MSG_INTRO . '</Message></Response>';
 
 	}else if(isCalendarRequest($_REQUEST["Body"])){
-		$url = "https://moodsense.dev/?phone=" . urlencode($_REQUEST['From']);
+		$url = "https://moodsense.dev/journal.php?phone=" . urlencode($_REQUEST['From']);
 		echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 		echo '<Response><Message>' . str_replace('{{CAL_LINK}}', $url, MSG_CALENDAR) . '</Message></Response>';
 
