@@ -48,6 +48,17 @@
 	</div>
 
 	<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center">
+		
+		<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+			<h3 class="display-4 fw-bold lh-1">Track Your Feelings</h3>
+			<p class="lead">The calendar feature is an easy and convenient space to access records of your thoughts and experiences, download-free.</p>
+		</div>
+		<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
+			<iframe width="315" height="560" src="https://www.youtube.com/embed/ngGVmXPb2PU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		</div>
+	</div>
+
+	<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center">
 		<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
 			<img class="rounded-lg-3 img-fluid" src="./img/tadhack.png" alt="" style='max-width:100%; max-height: 80vh;'>
 		</div>
