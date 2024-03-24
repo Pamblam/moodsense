@@ -21,7 +21,7 @@
 	let events = Object.keys(DATA).map(dte=>{
 		let date = new Date(DATA[dte].entries[0].ts*1000);
 		return {
-		  desc: `Average: `+DATA[dte].avg,
+		  desc: `Average: `+(Math.floor(DATA[dte].avg * 10) / 10),
 		  date: date,
 		  entries: DATA[dte].entries
 		};
@@ -126,14 +126,5 @@
 		}
 	};
 	let cal = new calendar(cal_ele, cal_opts);
-
-	Object.keys(DATA).forEach(dte=>{
-		let date = new Date(dte.ts*1000);
-		cal.addEvent({
-			desc: DATA.avg,
-			date: date,
-			entries: DATA[dte].etries
-		});
-	})
 
 })();

@@ -22,11 +22,10 @@ if(!empty($_REQUEST['Body']) && !empty($_REQUEST['From'])){
 		$gpt_response = $gob[2];
 		$stmt = $pdo->prepare("insert into entries (from_number, entry, rating, response, ts) values (?, ?, ?, ?, ?)");
 		$stmt->execute([$_REQUEST['From'], $_REQUEST['Body'], $rating, $gpt_response, time()]);
-		if($rating > 7){
-			$gpt_response .= "\n\nIt seems like you are having a particularly bad day. Here are some resources that you should check out to help you during this time. https://rb.gy/7nnnaw";
-		}
+		if($rating > 7) $gpt_response = MSG_RESOURCES.$gpt_response;
 		echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 		echo '<Response><Message>' . $gpt_response . '</Message></Response>';
+
 	}
 
 }

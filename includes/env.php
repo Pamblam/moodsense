@@ -21,6 +21,11 @@ define('MSG_CALENDAR', <<<END
 Click here to view your calendar. {{CAL_LINK}}
 END);
 
+define('MSG_RESOURCES', <<<END
+It seems like you are having a particularly bad day. Here are some resources that you should check out to help you during this time. https://rb.gy/7nnnaw
+
+END);
+
 date_default_timezone_set('America/New_York');
 
 // Create Database connection
