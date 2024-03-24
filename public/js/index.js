@@ -1,6 +1,5 @@
 (async ()=>{
 
-	console.log(DATA);
 	let container = document.querySelector('div');
 
 	container.innerHTML = `
@@ -67,13 +66,20 @@
 		'terrible'
 	];
 
+	let active_element = null;
+
 	let cal_opts = {
 		abbrDay: true,
 		onDayClick(date){
+
 			let month = `${date.getMonth()+1}`.padStart(2,'0');
 			let day = `${date.getDate()}`.padStart(2,'0');
 			let d = `${date.getFullYear()}-${month}-${day}`;
-			console.log(d);
+
+			if(active_element) active_element.style.outline = null;
+			active_element = document.querySelector(`.cjs-dayCol[data-date="${+month}/${+day}/${date.getFullYear()}"]`)
+			active_element.style.outline = `3px solid lightgreen`;
+
 			if(DATA[d]){
 				let scale = Math.round(DATA[d].avg)-1;
 				let mood_face = emojis[scale];
@@ -98,6 +104,7 @@
 								<div class='entry-box mb-3'>${entry.entry}</div>
 								<div class='entry-box text-muted'><small><i><b>Response:</b> ${entry.response}</i></small></div>
 							</div>`;
+
 						}).join('<hr>')}
 					</div>
 				`;
@@ -128,7 +135,5 @@
 			entries: DATA[dte].etries
 		});
 	})
-
-	console.log(container);
 
 })();
