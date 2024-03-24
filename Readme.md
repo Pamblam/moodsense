@@ -1,4 +1,4 @@
-![](img/logo.png)
+![](public/img/logo.png)
 
 MoodSense is a tool for expressing and tracking your feelings. It's like a journal, but with nothing to download!
 
