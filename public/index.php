@@ -18,7 +18,7 @@
 			</div>
 			<div class="col-lg-6">
 				<h1 class="display-5 fw-bold lh-1 mb-3">MoodSense</h1>
-				<p class="lead">This is a reallly cool description and i love this product and you should love it too. and i lvoe pam. and her buns..</p>
+				<p class="lead">Express your feelings, receive valuable feedback, and document your journey over time.</p>
 				<div class='text-center'>
 					<small>Powered by</small>
 					<img src='./img/signalwire.png' class='img-fluid' style='max-width: 200px; margin:0 auto;' />
@@ -29,8 +29,8 @@
         
 	<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center">
 		<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-			<h3 class="display-4 fw-bold lh-1">Get instant Feedback</h3>
-			<p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+			<h3 class="display-4 fw-bold lh-1">Get Instant Feedback</h3>
+			<p class="lead">Your AI companion assesses your thoughts and provides helpful observations and suggestions.</p>
 		</div>
 		<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
 			<img class="rounded-lg-3" src="./img/chat-ss.jpg" alt="" width="720">
@@ -42,8 +42,8 @@
 			<img class="rounded-lg-3 img-fluid" src="./img/cal-ss.jpg" alt="" style='max-width:100%; max-height: 80vh;'>
 		</div>
 		<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-			<h3 class="display-4 fw-bold lh-1">Track your feelings</h3>
-			<p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+			<h3 class="display-4 fw-bold lh-1">Track Your Feelings</h3>
+			<p class="lead">The calendar feature is an easy and convenient space to access records of your thoughts and experiences, download-free.</p>
 		</div>
 	</div>
 
