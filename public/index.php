@@ -1,7 +1,14 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
+
 	require "../includes/env.php";
 
 	$phone = $_GET['phone'];
+	if(empty($_GET['phone'])){
+		echo "Invalid Request";
+		exit;
+	}
 
 	$stmt = $pdo->prepare("select * from entries where from_number like ? order by ts asc");
 	$stmt->execute(["%$phone"]);
